@@ -20,6 +20,8 @@
                         <input (keyup)="passKeyup($event.target.value)" type="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <button (click)="login()" class="btn btn-primary">Iniciar Sesión</button>
+                    <a [routerLink]="['/register']">&nbsp;&nbsp;¿No tienes cuenta?</a><br>
+
             </div>
         </div>
     </div>
