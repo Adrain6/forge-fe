@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { RegisterComponent } from './components/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,10 +22,12 @@ const appRoutes: Routes = [
     LoginComponent,
     HomeComponent,
     NavComponent,
-    RegisterComponent
+    RegisterComponent,
+    
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule,
     RouterModule.forRoot(appRoutes, { useHash: true, scrollPositionRestoration: 'enabled' })
   ],

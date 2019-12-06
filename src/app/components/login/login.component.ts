@@ -23,11 +23,16 @@ export class LoginComponent implements OnInit {
     this.pass = value;
   }
   login() {
-    if(this.loginService.login(this.email, this.pass)) {
-      this.router.navigate(['/home']);
-    } else {
-      alert('usuario y pass inválidos');
-    }
+    console.log('soy el 1')
+    let obs =  this.loginService.login(this.email, this.pass);
+    obs.subscribe(validation  => {
+      if(validation) {
+        this.router.navigate(['/home']);
+      } else {
+        alert('usuario y pass inválidos');
+      }
+    });
+ 
   }
 
 }
